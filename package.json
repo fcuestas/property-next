@@ -2,6 +2,7 @@
   "name": "property-next",
   "version": "0.1.0",
   "private": true,
+  "author": "Ico",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
