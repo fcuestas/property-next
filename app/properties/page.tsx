@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { PropertyModel } from '@/Model/Property';
+import properties from '@/Themes/properties.json';
 
 export default function PropertiesPage() {
   return (

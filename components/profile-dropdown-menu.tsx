@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavLinkLogged from '@/components/nav-link-logged';
 import profileImg from '@/assets/images/profile.png'
 
 export default function ProfileDropdownMenu() {
@@ -42,27 +43,18 @@ export default function ProfileDropdownMenu() {
                 aria-labelledby="user-menu-button"
                 tabIndex={-1}
               >
-                <Link
+                <NavLinkLogged
                   href="/profile.html"
                   className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  tabIndex={-1}
-                  id="user-menu-item-0"
-                  >Your Profile</Link                >
-                <Link
+                  >Your Profile</NavLinkLogged  >
+                <NavLinkLogged
                   href="saved-properties.html"
                   className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  tabIndex={-1}
-                  id="user-menu-item-2"
-                  >Saved Properties</Link                >
-                <Link
+                  >Saved Properties</NavLinkLogged>
+                <NavLinkLogged
                   href="#"
                   className="block px-4 py-2 text-sm text-gray-700"
-                  role="menuitem"
-                  tabIndex={-1}
-                  id="user-menu-item-2"
-                  >Sign Out</Link                >
+                  >Sign Out</NavLinkLogged  >
               </div>}
             </div>
         </>

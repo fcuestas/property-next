@@ -2,10 +2,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
+import NavLinkLogged from '@/components/nav-link-logged';
+import { FaGoogle } from 'react-icons/fa';
 
-export default function HamburguerButton() {
+export default function HamburguerButton(
+  {
+    isLoggedIn
+  }:{
+    isLoggedIn:boolean
+  }
+) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const isLoggedIn = true;
+    
     function handleMobileMenuBlur(){
         setTimeout(() => setIsMobileMenuOpen((prev)=> !prev), 300);
     }
@@ -41,22 +49,22 @@ export default function HamburguerButton() {
          {/* <!-- Mobile menu, show/hide based on menu state. --> */}
         {isMobileMenuOpen && <div className="md:hidden absolute top-20 min-w-60 text-center left-0 z-10" id="mobile-menu">
         <div className="space-y-1 px-2 pb-3 pt-2 bg-blue-700">
-          <Link
+          <NavLinkLogged
             href="/"
-            className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Home</Link>
-          <Link
+            className="text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Home</NavLinkLogged>
+          <NavLinkLogged
             href="/properties"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Properties</Link          >
-          <Link
+            >Properties</NavLinkLogged          >
+          <NavLinkLogged
             href="/properties/add"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Add Property</Link         >
+            >Add Property</NavLinkLogged         >
           {!isLoggedIn && <button
             className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4"
           >
-            <i className="fa-brands fa-google mr-2"></i>
+            <FaGoogle className="mr-2"/>
             <span>Login or Register</span>
           </button>}
         </div>
